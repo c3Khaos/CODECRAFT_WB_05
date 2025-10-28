@@ -1,7 +1,10 @@
 import React from 'react'
+import DataFetcher from './components/DataFetcher'
 
 export default function App() {
   return (
-    <div>App</div>
+    <div>
+      <DataFetcher/>
+    </div>
   )
 }
