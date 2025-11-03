@@ -7,7 +7,7 @@ function DataFetcher() {
 
   const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
   const baseUrl = import.meta.env.VITE_BASE_URL;
-  const city = "Nairobi";
+  const city = "kakamega";
 
   useEffect(() => {
     const fetchData = async () => {
