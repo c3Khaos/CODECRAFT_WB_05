@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-function SearchBar() {
+function SearchBar({onCitySubmit}) {
     
     const[searchTerm , setSearchTerm] = useState("");
 
@@ -11,21 +11,29 @@ function SearchBar() {
     const handleSearch = (e)=>{
         e.preventDefault();
 
-        if(searchTerm.trim() === ''){
-          console.log("search bar is empty.")
+        const query = searchTerm.trim();
+        if(query){
+            onCitySubmit(query);
+            setSearchTerm('');
         }
+        
     }
 
   return (
     <form onSubmit={handleSearch}>
         <input 
         type="text"
-        placeholder='Enter search city...'
+        placeholder='Entercity name (e.g., Nairobi)'
         value={searchTerm}
         onChange={handleInputChange}
+        
         />
-        <button type = "submit">
-            Search
+
+        <button
+        type = "submit"
+        disabled={!searchTerm.trim()}
+        >
+           Check Weather
         </button>
 
     </form>
